@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const app = express();
+const port = process.env.PORT || 3000;
 console.log(__dirname);
 console.log(path.join(__dirname,'../public'));
 const pubDir = path.join(__dirname,'../public');
@@ -77,6 +78,6 @@ app.get('*',(req,res)=>{
     res.send('404 error');
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('it has started');
 })
